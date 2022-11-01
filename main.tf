@@ -132,7 +132,7 @@ EOF
 
 resource "aws_instance" "web1" {
   ami                    = var.amis[var.region]
-  instance_type          = var.instance_type
+  instance_type          = var.instance_type1
   key_name               = var.key_name
   subnet_id              = aws_subnet.subnet1.id
   vpc_security_group_ids = [aws_security_group.webserver.id]
