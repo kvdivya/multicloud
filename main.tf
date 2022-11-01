@@ -129,3 +129,26 @@ EOF
     Name = "cnapp"
   }
 }
+
+resource "aws_instance" "web" {
+  ami                    = var.amis[var.region]
+  instance_type          = var.instance_type
+  key_name               = var.key_name
+  subnet_id              = aws_subnet.subnet1.id
+  vpc_security_group_ids = [aws_security_group.webserver.id]
+
+  associate_public_ip_address = true
+
+  #userdata
+  user_data = <<EOF
+#!/bin/bash
+apt-get -y update
+apt-get -y install nginx
+service nginx start
+echo fin v1.00!
+EOF
+
+  tags = {
+    Name = "cnapp"
+  }
+}
