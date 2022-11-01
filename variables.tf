@@ -20,6 +20,6 @@ variable "availability_zones" {
 variable "amis" {
   type = map(any)
   default = {
-    "eu-west-1" : "ami-0648ea225c13e0729"
+    "eu-west-2" : "ami-0648ea225c13e0729"
   }
 }
