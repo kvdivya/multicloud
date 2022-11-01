@@ -130,7 +130,7 @@ EOF
   }
 }
 
-resource "aws_instance" "web" {
+resource "aws_instance" "web1" {
   ami                    = var.amis[var.region]
   instance_type          = var.instance_type
   key_name               = var.key_name
