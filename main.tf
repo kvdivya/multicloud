@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "country-area-number"
+  region = "eu-west-2"
 }
 
 resource "aws_vpc" "main" {
